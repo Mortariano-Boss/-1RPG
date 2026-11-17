@@ -1,0 +1,108 @@
+{
+  "theme_and_brand": {
+    "theme": "dark",
+    "brand_name": "+1 RPG",
+    "slogan": "Mais uma pessoa. Mais uma aventura.",
+    "mascot": "Critin (gato-mago chibi com chapéu violeta e olhos verdes que segura um d20).",
+    "colors": {
+      "background_base": "#251240",
+      "surface_card": "#25323A",
+      "primary_action": "#267E1B",
+      "text_primary": "#F7EDE0",
+      "text_secondary": "rgba(247, 237, 224, 0.7)",
+      "border": "rgba(247, 237, 224, 0.1)"
+    },
+    "typography": {
+      "headings": "'Montserrat', sans-serif",
+      "body": "'Inter', sans-serif",
+      "rules": "H1 max text-5xl to text-6xl with tracking-tighter. Overlines MUST be uppercase + text-sm + tracking-[0.2em]. Body text loose leading-relaxed. Use Montserrat for all headings in various weights (Light for elegance, Black for impact)."
+    },
+    "visual_direction": "Modern, young, welcoming, references to RPG, dice, magic, connection. Geometric and orbital elements, card UI, rounded borders, clear hierarchy. Avoid generic geek store or heavy medieval fantasy."
+  },
+  "layouts_and_grids": {
+    "bento_grid": "Use Mode A 'Tetris' Grid for Marketing (Home). Asymmetrical gaps, gap-8 to gap-12. Never fill 100% of the grid perfectly. Use empty cells for offset alignment.",
+    "dashboard_grid": "Use Mode B 'High Density Grid' for Dashboards (Player/Mestre). Tight gaps (gap-4 or gap-6).",
+    "spacing": "Generous Spacing Philosophy. Use 2-3x more spacing (p-8, p-12, p-24, py-32). Containers with borders MUST have internal padding."
+  },
+  "motion_and_interactions": {
+    "scroll": "MANDATORY: use `lenis` for smooth momentum scrolling.",
+    "hero_reveal": "Large kinetic hero with line-by-line masked text reveal using framer-motion.",
+    "micro_interactions": "Hover states on cards (slight lift -translate-y-1, subtle shadow, glow), button clicks. Always explicitly set text color on hover.",
+    "parallax": "Include a parallax/3D moment in the hero. Floating D20 dice and geometric elements moving at different speeds on scroll."
+  },
+  "visual_enhancers": {
+    "marquee": "Slow editorial marquee for 'Menos barreiras. Mais histórias.'. Use react-fast-marquee. Very slow smooth drift, pale background (Cream) with dark text (Graphite) or huge outline text on dark background.",
+    "surfaces": "Glassmorphism for sticky nav: backdrop-blur-xl bg-[#251240]/70 with 1px delicate inner stroke (border-[#F7EDE0]/10). For dashboard cards, use flat solid surfaces (#25323A) with subtle borders and 8px border-radius.",
+    "logo": "Original SVG logo: '+1' inside a d20/hexagon. Use as favicon and header logo."
+  },
+  "pages_and_components": {
+    "hero": "Cinematic dark background (#251240). Line-by-line text reveal: 'Falta +1 na mesa?'. 3D Parallax floating d20 dice. CTAs: 'Encontrar minha mesa' (Primary Green pill button) and 'Sou Mestre' (Outline/Cream pill button).",
+    "search_tables": "Filters (system, format, level, slots) using Shadcn Select/Input. Incorporate Critin states (Loading=curioso, Results=feliz, Empty=triste, Error=preocupado).",
+    "plans": "Informative section: Aventureiro R$0, Explorador R$19,90, Lendário R$39,90. Highlight Lendário with a glowing border (The 'Tracing Beam' look).",
+    "store": "Grid of products: Moletom R$169,90, Camiseta R$79,90, Conjunto 7 dados R$59,90, Dados premium R$119,90, Miniatura simples R$79,90, Miniatura personalizada R$149,90+, Livro R$89,90+, Kit adesivos R$34,90. Include Cart/Checkout flows.",
+    "dashboard": "Player/Master areas using Shadcn UI (Cards, Tabs, Tables) but styled without the Vercel-look. Flat, rectangular, dense styles.",
+    "publish_table": "Form using heavily customized Shadcn Input, Select, Textarea to post a real table to DB.",
+    "navigation": "MUST have a visible navigation bar with Logo + links + CTA. Glassmorphism header, z-50. No transparent headers.",
+    "bento_features": "Section 'Seu jeito de viver o RPG' (Quero jogar / Sou Mestre) and benefits (Encontre/Conecte/Jogue) using asymmetrical bento layout."
+  },
+  "libraries_and_3d": {
+    "motion": "framer-motion for reveals and micro-interactions.",
+    "scroll": "@studio-freight/react-lenis for smooth scrolling.",
+    "marquee": "react-fast-marquee.",
+    "icons": "lucide-react.",
+    "3d": "framer-motion 3D or react-spring-parallax for the hero parallax moment. Optional: Spline or R3F for the D20 dice if feasible, otherwise layered PNGs with parallax."
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1739513275605-8f768065d402",
+      "category": "mascot",
+      "description": "Critin (gato-mago) illustration for UI states (feliz/curioso)."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1739513235245-7bf155a094d0",
+      "category": "mascot",
+      "description": "Critin sitting, useful for empty states (triste/preocupado)."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1650024520252-14bdf7a3f312",
+      "category": "hero",
+      "description": "D20 metal dice on leaves - useful for parallax elements or background blending."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1650024520022-cab7611a460b",
+      "category": "store",
+      "description": "Blue d20 for premium dice product image in the Store."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1677188010559-0667a1ed33a0",
+      "category": "community",
+      "description": "Friends playing board games. Use for the 'Conecte' or Community guidelines section, heavily treated with dark/violet overlay (max bg-black/50 or bg-[#251240]/60)."
+    }
+  ],
+  "accessibility": {
+    "contrast": "Ensure text over violet/graphite meets APCA/WCAG AA standards.",
+    "motion": "Respect prefers-reduced-motion for all heavy animations.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Build the MVP using React and Tailwind CSS (.js not .tsx).",
+    "Prioritize the Awwwards Site-of-the-Day aesthetic: deep violet base, cream text, green CTAs.",
+    "Implement Lenis for smooth scrolling and Framer Motion for scroll-reveals (specifically masked line-by-line reveal in hero).",
+    "Use Shadcn UI for complex interactive components (Forms, Selects, Dialogs) but strip generic styling to match brand.",
+    "Ensure the hero has a 3D/parallax moment (layered elements floating).",
+    "Build out all requested pages: Home, Buscar Mesas, Detalhe da Mesa, Login, Cadastro, Painel, Publicar Mesa, Planos, Loja, Carrinho/Checkout, Comunidade/Diretrizes.",
+    "Do NOT use 'Inter' for headings. Only use Montserrat for headings and Inter for body text.",
+    "Add 'data-testid' to all buttons, links, and forms."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do not center align the app container. Do not add text-align: center globally.",
+    "Never use complete transparent background in headers, overlays, or dropdowns. Use glassmorphism or solid colors.",
+    "Do not apply universal transition (transition: all). Target specific properties.",
+    "Create depth through layered design elements with z-index hierarchy and glassmorphism (12-24px blur).",
+    "Use modern pill-shaped or sharp buttons with interaction animations.",
+    "Never use generic AI emojis for icons; use lucide-react.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Add subtle grain textures or noise overlays to break digital flatness.",
+    "All interactive elements MUST include data-testid."
+  ]
+}
